@@ -9,24 +9,30 @@
 		body {
 			background: black;
 
-			font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			font-family: roboto,sans-serif;
 		}
 
 		h1 {
 			position: relative;
 
-			color:hsla(0, 0%, 100%, .7);
+			color:hsla(0, 0%, 100%, .9);
+			font-size: 3em;
+			text-align: center;
+			text-transform: uppercase;
+
+			white-space: pre;
+			/* isolation:isolate; */
 		}
 
 		h1 span {
-			color: hsla(1, 74%, 39%, .7);
+			color: hsla(1, 74%, 39%, 1);
 		}
 
 		h1::after {
 			position: absolute;
-			width: 1em;
-			height: 1em;
-			top: .25em;
+			width: 1.5em;
+			height: 1.5em;
+			top: -.25em;
 			left: -1em;
 
 			background-color: white;
@@ -34,15 +40,30 @@
 
 			mix-blend-mode: soft-light;
 			content: '';
-			animation: 2s linear 2s 2 backwards running left-to-right;
+			animation: 1.5s linear 0s infinite backwards running left-to-right,
+								 8s   linear 2s infinite backwards running delay-animation;
 		}
 
 		@keyframes left-to-right {
-			to { left: 90%; }
+			to { left: calc(100% - 2em); }
 		}
+		@keyframes delay-animation {
+		0% {
+			opacity: 1;
+		}
+		50% {
+			opacity: 1;
+		}
+		50.01% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
 	</style>
 </head>
 <body>
-	<h1>Lorem ipsum <span>dolor sit amet.</span></h1>
+	<h1>Fire<span>fund</span></h1>
 </body>
 </html>
